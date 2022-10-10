@@ -1,0 +1,6 @@
+version: '3.8'
+
+services:
+  backend:
+    volumes:
+      - ./.docker/backend/history:/backend/history:delegated
