@@ -1,0 +1,21 @@
+{
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true,
+  "python.linting.pylintPath": "pylint",
+  "python.linting.pylintArgs": [
+      "--disable=C0111"
+  ],
+  "python.testing.unittestArgs": [
+    "-v",
+    "-s",
+    "./backend/app",
+    "-p",
+    "test_*.py"
+  ],
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestArgs": [
+    "backend/app",
+    "-v"
+  ]
+}

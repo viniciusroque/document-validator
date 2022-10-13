@@ -5,3 +5,6 @@ commitlint.config.js
 *.pyc
 .docker/**/history/.bash_history
 .vscode-server
+.cache
+.local
+test.db

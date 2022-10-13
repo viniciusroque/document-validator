@@ -6,4 +6,7 @@ services:
     volumes:
       - .:/backend
     tty: true
-    command: ['tail', '-f', '/dev/null']
+    command: ["python", "-m", "uvicorn", "backend.app.api:app", "--host", "0.0.0.0", "--reload"]
+    # command: ["/bin/bash"]
+    ports:
+      - '8000:8000'

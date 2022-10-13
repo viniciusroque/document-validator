@@ -7,7 +7,11 @@ USER backend
 ENV HISTFILE=/backend/history/.bash_history
 
 WORKDIR /backend
+COPY requirements* /backend/backend/
+RUN pip install --upgrade pip && pip install -r backend/requirements-dev.txt
 
-ENV PYTHONPATH=${PYTHONPATH}/backend/app
+ENV PYTHONUNBUFFERED=1
 
-CMD [ "tail", "-f", "/dev/null" ]
+ENV PYTHONPATH=${PYTHONPATH}/backend/backend
+
+CMD ["python", "-m", "uvicorn", "backend.app.api:app", "--host", "0.0.0.0", "--reload"]
